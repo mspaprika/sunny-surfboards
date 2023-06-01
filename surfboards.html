@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Surfboards</title>
+    <style>
+        body {
+            background-color: #c33764;
+            background-image: linear-gradient(to bottom left, #c33764, #1d2671);
+            margin-top: 20px;
+            margin-left: 30px;
+            margin-right: 30px;
+            font-family: cursive;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            font-family: cursive;
+        }
+
+        tr {
+            height: 30px;
+        }
+
+        .buttons {
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            margin-left: 50px;
+            background-color: #F8F99B;
+        }
+    </style>
+    <script>
+
+        var slideimages = new Array()
+        slideimages[0] = new Image()
+        slideimages[0].src = "pics/blue-white-surf.jpg"
+        slideimages[1] = new Image()
+        slideimages[1].src = "pics/orange-surf.jpg"
+        slideimages[2] = new Image()
+        slideimages[2].src = "pics/green-surf.jpg"
+
+        function description(type) {
+
+            var type;
+            var text = document.getElementById('text');
+            var image = document.getElementById('sbImage');
+
+            if (type == 'Foam') {
+                text.innerHTML = 'Foam Surfboards are surf boards made from high density foam with a slick plastic base, they are stable, forgiving to surf and perfect for beginner surfers or surfers looking for a lower price board for a bit of fun.';
+                image.src = 'pics/FOAM.jpg';
+            } else if (type == 'Long') {
+                text.innerHTML = 'What is a Longboard Surfboard? A longboard is a term to describe a specific type of surfboard. These surfboards generally measure at least three feet longer than the rider&#39;s height, anywhere from 8-11ft long, featuring big, rounded noses, wide decks, and a little extra thickness for increased volume.';
+                image.src = 'pics/LONG.jpg';
+            } else if (type == 'Fun') {
+                text.innerHTML = 'A funboard is a surfboard that&#39;s 6 to 8 feet long and has a rounder/wider outline than shortboards (in-between a longboard and a fish). If you have ridden a soft top surfboard before, otherwise known as a foam board, a funboard is the fiberglass version of it.';
+                image.src = 'pics/FUN.jpg';
+            } else if (type == 'Short') {
+                text.innerHTML = 'Shortboard (aka Thruster)The most common surfboard used for contest-style surfing. It sacrifices paddling ease for speed, power, and control. They are generally around 5&#39;6″ to 6&#39;4″ long and between 16″ and 19″ wide, often with a rounded square tail.';
+                image.src = 'pics/SHORT.jpg';
+            } else if (type == 'Gun') {
+                text.innerHTML = 'Gun surfboards are designed for much bigger waves. So big a wave that most beginner surfers have never ridden in conditions where they might need a gun surfboard. But if you think you are brave and mature enough to ride a gun surfboard then go for it. Typically, gun surfboards range from 6 feet all the way to 10 feet. ';
+                image.src = 'pics/GUN.jpg';
+            } else if (type == 'Fish') {
+                text.innerHTML = 'When most people think of or refer to a fish surfboard, they are likely referring to a short, wide, flat, and thicker-than-normal surfboard with a bit of volume and a fish-like swallow tail. These are some of the most common defining characteristics of a fish.';
+                image.src = 'pics/FISH.jpg';
+            } else {
+                text.innerHTML = 'Error occured. Refresh the page.';
+                image.src = 'pics/sun-surfboard2.jpg';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <p style="float: left"><a href="index.html" style="font-size: 150%; color: aqua">
+            Back to Main</a>
+    </p>
+    <p style="float: right"><a href="wetsuits.html" style="font-size: 150%; color: aqua">
+            Wetsuits</a>
+    </p>
+    <h1 style="text-align: center; font-size: 300%; color: #9BF9F8;">Surf<span style="color: #E8E266">boards</span></h1>
+    <div style="float: right; margin: 20px">
+        <img height="400" width="360" src="pics/blue-white-surf.jpg" id="slide">
+    </div>
+    <script>
+
+        var step = 0
+        function slideit() {
+            document.getElementById('slide').src = slideimages[step].src
+            if (step < 2)
+                step++
+            else
+                step = 0
+            setTimeout("slideit()", 2500)
+        }
+        slideit()
+
+    </script>
+    <table style=" background-color: #ABF6F7; padding: 15px; width: 50%; margin-left: 100px; margin-top: 50px">
+        <tr>
+            <th>Surfboard type</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Foam/beginner</td>
+            <td>£10</td>
+        </tr>
+        <tr>
+            <td>Long/beginner</td>
+            <td>£10</td>
+        </tr>
+        <tr>
+            <td>Fun/beginner</td>
+            <td>£12</td>
+        </tr>
+        <tr>
+            <td>Short/advanced</td>
+            <td>£15</td>
+        </tr>
+        <tr>
+            <td>Gun/advanced</td>
+            <td>£18</td>
+        </tr>
+        <tr>
+            <td>Fish/advanced</td>
+            <td>£18</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <p style="margin: 30px; color: #B4F4F3">
+        Here in <span style="color: #E8E266"><strong>Sunny Surfboards </strong></span>we welcome everyone with every
+        ability and level. We offer 3 types of surfboards suitable for beginners and 3 types for advanced surfboarders.
+    </p>
+    <br><br><br><br>
+    <div style="float: left; margin-left: 25px; margin-top: 10px">
+        <button class="buttons" type="button" onclick="description('Foam')">Foam</button><br>
+        <button class="buttons" type="button" onclick="description('Long')">Long</button><br>
+        <button class="buttons" type="button" onclick="description('Fun')">Fun</button><br>
+        <button class="buttons" type="button" onclick="description('Short')">Short</button><br>
+        <button class="buttons" type="button" onclick="description('Gun')">Gun</button><br>
+        <button class="buttons" type="button" onclick="description('Fish')">Fish</button><br>
+    </div>
+    <div style="float: right; margin-right: 300px">
+        <img id="sbImage" width="200" height="200" src="pics/ALL.jpg">
+    </div>
+    <p id="text" style="margin-left: 14em; margin-right: 35em; margin-top: 30px; color: #B4F4F3">
+        There's so many different types of surfboards. How is it possible to decide which one is the right ONE ?? We
+        have provided brief description about each one of them, just press a button to find out!
+    </p>
+
+    <p style="margin-left: 50px; margin-right: 50px; margin-top: 150px; color: #B4F4F3">
+        We understand the importance of preparation before starting a surf-journey. Our team is working hard to provide
+        training sessions for beginners and that's our priority. But this might take some time so for now take a look at
+        this online tutorial:
+    </p>
+    <br>
+    <br>
+
+</body>
+
+</html>
