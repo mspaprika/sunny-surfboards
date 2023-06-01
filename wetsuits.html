@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Wetsuits</title>
+    <style>
+        body {
+            background-color: #c33764;
+            background-image: linear-gradient(to bottom left, #c33764, #1d2671);
+            margin: 30px;
+            margin-bottom: 100px;
+            font-family: cursive;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            font-family: cursive;
+        }
+
+        tr {
+            height: 30px;
+        }
+    </style>
+    <script>
+
+        var slideimages = new Array()
+        slideimages[0] = new Image()
+        slideimages[0].src = "pics/black-wet.jpg"
+        slideimages[1] = new Image()
+        slideimages[1].src = "pics/short-wet.jpg"
+        slideimages[2] = new Image()
+        slideimages[2].src = "pics/flower-wet.jpg"
+        slideimages[3] = new Image()
+        slideimages[3].src = "pics/wetsDouble.jpg"
+
+    </script>
+</head>
+
+<body>
+    <p style="float: left">
+        <a href="index.html" style="font-size: 150%; color: aqua">
+            Back to Main</a>
+    </p>
+    <p style="float: right">
+        <a href="surfboards.html" style="font-size: 150%; color: aqua">
+            Surfboards</a>
+    </p>
+    <h1 style="text-align: center; font-size: 300%; color: #9BF9F8">Wet<span style="color: #E8E266">suits</span></h1>
+    <div style="float: right; margin: 20px">
+        <img id="slide" height="380" width="360" src="pics/black-wet.jpg">
+    </div>
+    <script>
+
+        var step = 0
+        function slideit() {
+            document.getElementById('slide').src = slideimages[step].src
+            if (step < 3)
+                step++
+            else
+                step = 0
+            setTimeout("slideit()", 2500)
+        }
+        slideit()
+
+    </script>
+    <table
+        style="float:left; background-color: #F7F8B7; padding: 15px; width: 50%; margin-left: 100px; margin-top: 50px">
+        <tr>
+            <th>Wetsuit type</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Thick/longsleeve</td>
+            <td>£10</td>
+        </tr>
+        <tr>
+            <td>Thin/longsleeve</td>
+            <td>£8</td>
+        </tr>
+        <tr>
+            <td>Thin/shortsleeve</td>
+            <td>£7</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p style="margin: 40px; margin-top: 60px; color: #E9EEC7;">
+        We know how much confidence you need to step on a surfboard, especially for a very first time. We also believe
+        that a proper outfit is able to take confidence to a new level. That's why we have conducted a serious research
+        to find the best options for You. All our wetsuits are top quality high-end products designed to provide maximum
+        protection from UV rays and keep you warm and cozy.
+        Wetsuits are available in 4 sizes:<span style="color: #E8E266"><strong>
+                Small/Medium/Large/ExtraLarge</strong></span>.
+        <br>
+        We don't sell children wetsuits yet, but we're looking deeply into this right now. We are going to add more
+        stock in the future so don't forget to sign up to our
+        <a style="color: aqua;" href="index.html#Bonus">newsletter</a>. You'll be the first to know even before this
+        happens!
+    </p>
+    <h2 style="text-align: center; color: #E8E266">Size guide</h2>
+    <p style="color: #B4F4F3; text-align: center; margin: 30px">
+        Not sure which size is right one for you? <br>You can try our little calculator.<br> Alternatively you can <a
+            style="color: aqua" href="index.html#contact">contact us</a> and we will be more than happy to help!
+    </p>
+    <div style="float: left; margin-left: 30px; margin-right: 150px; margin-top: 80px;">
+        <img id="icon" src="pics/iconFemale.jpg" height="200" width="200">
+    </div>
+    <div style="float: right; margin: 30px">
+        <img id="myImage" src="pics/wetsuitFemale.jpg" height="300" width="300">
+    </div>
+    <br>
+    <form style="margin: 50px; margin-bottom: 0px; color: #9BF9F8">
+        <label for="height">Enter your height in cm</label>
+        <input type="number" id="height"><br><br>
+        <label for="weight">Enter your weight in kg</label>
+        <input type="number" id="weight"><br><br>
+        <button style="margin-left: 9em; background-color: #E9EEC7; font-weight: bold; line-height: 20px" type="button"
+            onclick="calculate()">Calculate size</button>
+    </form>
+    <script>
+
+        function calculate() {
+            var height = document.getElementById('height').value;
+            var weight = document.getElementById('weight').value;
+            var output = document.getElementById('answer');
+
+            if (height >= 130 && height <= 170) {
+                if (weight >= 35 && weight <= 70) {
+                    output.innerHTML = 'Your size is... Small';
+                } else if (weight > 70 && weight <= 85) {
+                    output.innerHTML = 'Your size is... Medium';
+                } else if (weight > 85 && weight <= 110) {
+                    output.innerHTML = 'Your size is... Large';
+                } else if (weight > 110 && weight <= 150) {
+                    output.innerHTML = 'Your size is... Extra Large';
+                } else if (weight < 30) {
+                    output.innerHTML = 'Invalid entry';
+                } else {
+                    output.innerHTML = 'Contact us for assistance';
+                }
+            } else if (height > 170 && height <= 200) {
+                if (weight >= 50 && weight <= 70) {
+                    output.innerHTML = 'Your size is... Medium';
+                } else if (weight > 70 && weight <= 90) {
+                    output.innerHTML = 'Your size is... Large';
+                } else if (weight > 90 && weight <= 150) {
+                    output.innerHTML = 'Your size is... Extra Large';
+                } else if (weight < 30) {
+                    output.innerHTML = 'Invalid entry';
+                } else {
+                    output.innerHTML = 'Contact us for assistance';
+                }
+            } else if (!height || !weight || height < 100 || height > 250) {
+                output.innerHTML = 'Invalid entry';
+            }
+            else {
+                output.innerHTML = 'Contact us for assistance';
+            }
+        }
+
+    </script>
+
+    <p id="answer"
+        style="color: #E8E266; margin-left: 380px; margin-right: 450px; border-style: solid; border-color: white; line-height: 3.5em; text-align: center; font-size: 120%">
+        Your size will appear here
+    </p>
+
+    <div style="float: left; margin-left: 70px">
+        <button style="background-color: #B4F4F3; font-weight: bold; line-height: 20px" type="button"
+            onclick="changeImages()">Change gender</button>
+    </div>
+    <script>
+
+        function changeImages() {
+
+            var icon = document.getElementById('icon');
+            var image = document.getElementById('myImage');
+
+            if (icon.src.match("iconMale.jpg")) {
+                icon.src = "pics/iconFemale.jpg";
+                image.src = "pics/wetsuitFemale.jpg";
+            }
+            else {
+                icon.src = "pics/iconMale.jpg";
+                image.src = "pics/wetsuitMale.jpg";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
